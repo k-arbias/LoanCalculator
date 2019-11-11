@@ -1,9 +1,7 @@
 document.getElementById('loan-form').addEventListener('submit', function(e){
 
     document.getElementById('results').style.display = 'none';
-
     document.getElementById('loading').style.display = 'block';
-
     setTimeout(calculateResults, 1000);
 
     e.preventDefault();
@@ -37,6 +35,9 @@ function calculateResults(e){
 }
 
 function showError(error){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').style.display = 'none';
+    
     const errorDiv = document.createElement('div');
     const card = document.querySelector('.card');
     const heading = document.querySelector('.heading');
